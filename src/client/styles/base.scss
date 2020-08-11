@@ -1,14 +1,25 @@
+$font-stack: Arial, sans-serif;
+$primary-color: #8C94A8;
+$secondary-color: #CBD8F5;
+$tertiary-color: #9CA6BD;
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font: 100% $font-stack;
+    background-color: $tertiary-color;
 }
 
 main {
+
     flex: 2;
 }
 
 section {
+  h1 {
+    margin-bottom: 10px;
+  }
     max-width: 800px;
     margin: 50px auto;
 }
