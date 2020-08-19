@@ -13,7 +13,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "aylien-news-api": "^4.1.1",
+    "aylien-news-api": "github:AYLIEN/aylien_newsapi_nodejs",
     "aylien_textapi": "^0.7.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
