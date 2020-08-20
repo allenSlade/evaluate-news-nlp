@@ -35,6 +35,8 @@ app.get('/', function (req, res) {
 
 app.use(express.json());
 
+let projectData = {};
+
 app.post('/api-news', function (req, res) {
   let callback = function(error, data, response) {
     if (error) {
@@ -50,6 +52,7 @@ app.post('/api-news', function (req, res) {
     }
   };
   api.listStories(req.body, callback);
+  // api.listStories(opts, callback);
 })
 
 // designates what port the app will listen to for incoming requests
@@ -61,16 +64,16 @@ app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
 
-let projectData = {};
 
-app.post('/stories', function (req, res) {
-console.log('Response:', req.body);
+
+// app.post('/stories', function (req, res) {
+// console.log('Response:', req.body);
 // let newEntry = {
 //     date: req.body.date,
 //     temp: req.body.temp,
 //     content: req.body.content
 //   }
 //   projectData = newEntry;
-  console.log(projectData);
-  res.send(projectData);
-});
+//   console.log(projectData);
+//   res.send(projectData);
+// });

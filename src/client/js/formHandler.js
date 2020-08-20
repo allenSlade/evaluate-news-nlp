@@ -6,24 +6,18 @@ async function handleSubmit(event) {
   event.preventDefault()
 
   // check what text was put into the form field
-  let formText = document.getElementById('name').innerText
+  let formText = document.getElementById('name').value
   Client.checkForName(formText)
   console.log(formText)
   console.log("Form Submitted!")
 
   let opts = {
-    title: "trump",
-    // title: "climate change",
-    // title: query.formText,
-    // title: "",
-    sortBy: "social_shares_count.facebook",
+    // title: "trump",
+    body: formText,
+    // sortBy: "social_shares_count.facebook",
     language: ["en"],
     publishedAtStart: "NOW-7DAYS",
-    publishedAtEnd: "NOW",
-    // entitiesBodyLinksDbpedia: [
-    //   "http://dbpedia.org/resource/Donald_Trump",
-    //   "http://dbpedia.org/resource/Hillary_Rodham_Clinton"
-    // ]
+    publishedAtEnd: "NOW"
   };
 
   fetch('http://localhost:8081/api-news', {
@@ -33,20 +27,18 @@ async function handleSubmit(event) {
       'content-type': 'application/json'
     }})
   .then(res => res.json())
-  // .then(function(res) {
-  //     let results = document.getElementById('results').innerHTML
-  //     results = res.message
-  //     console.log(res.message)
-  .then(opts => {
+  .then (opts => {
     console.log('success', opts);
-    let results = document.getElementById('results').innerHTML
-    results = opts.message
-    console.log(results);
+    document.getElementById('results').innerHTML = opts;
   })
+  // .then(opts => {
+  //   console.log('success', opts);
+  //   parseData = JSON.parse(opts);
+  //   document.getElementById('results').innerHTML = opts
+  // })
   .catch(error => {
-    console.log('error', error);
+    console.log('error', error)
   })
-  // JSON.parse()
 }
 
 export { handleSubmit }
@@ -56,3 +48,13 @@ const updateUISuccess = function(data) {
   console.log(data);
   let formText = parsedData.stories;
 }
+
+const updateUI = async() => {
+  const req = await fetch('/');
+  try {
+    const allData = await req.json()
+    document.getElementById('results').innerHTML = opts;
+  } catch(error) {
+    console.log('error', error)
+  }
+};
