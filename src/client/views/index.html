@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>Test</title>
-        <link rel="stylesheet" href="/styles/resets.css">
+        <!-- <link rel="stylesheet" href="/styles/resets.css">
         <link rel="stylesheet" href="/styles/base.css">
         <link rel="stylesheet" href="/styles/header.css">
         <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css">
+        <link rel="stylesheet" href="/styles/footer.css"> -->
     </head>
 
     <body>
@@ -26,16 +26,47 @@
             <section>
               <h1>News Articles</h1>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Enter news keyword here..." minlength="4" maxlength="140">
+                    <input id="name" type="text" name="input" value="" placeholder="Enter news keyword here..." minlength="4" maxlength="140">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>
 
             <section>
                 <strong>Form Results:</strong>
-                <div id="results">
+                  <div id="results">
+                    <div class="form-result">
+                      <p class="spacing">Author:<br></p>
+                      <div id="author"></div>
+                      <p>Links:<br></p>
+                      <div id="links"></div>
+                      <p>Sentiment:<br></p>
+                      <div id="sentiment"></div>
+                      <p>Summary:<br></p>
+                      <div id="summary"></div>
+                    </div>
 
-                </div>
+                    <div class="form-result">
+                      <p class="spacing">Author:<br></p>
+                      <div id="author3"></div>
+                      <p>Links:<br></p>
+                      <div id="links3"></div>
+                      <p>Sentiment:<br></p>
+                      <div id="sentiment3"></div>
+                      <p>Summary:<br></p>
+                      <div id="summary3"></div>
+                    </div>
+
+                    <div class="form-result">
+                      <p class="spacing">Author:<br></p>
+                      <div id="author5"></div>
+                      <p>Links:<br></p>
+                      <div id="links5"></div>
+                      <p>Sentiment:<br></p>
+                      <div id="sentiment5"></div>
+                      <p>Summary:<br></p>
+                      <div id="summary5"></div>
+                    </div>
+                    </div>
             </section>
         </main>
 

@@ -29,13 +29,21 @@ async function handleSubmit(event) {
   .then(res => res.json())
   .then (opts => {
     console.log('success', opts);
-    document.getElementById('results').innerHTML = opts;
+    document.getElementById('author').innerHTML = opts.stories[0].author.name;
+    document.getElementById('links').innerHTML = opts.stories[0].links.permalink;
+    document.getElementById('sentiment').innerHTML = opts.stories[0].sentiment.body.polarity;
+    document.getElementById('summary').innerHTML = opts.stories[0].title;
+
+    document.getElementById('author3').innerHTML = opts.stories[3].author.name;
+    document.getElementById('links3').innerHTML = opts.stories[3].links.permalink;
+    document.getElementById('sentiment3').innerHTML = opts.stories[3].sentiment.body.polarity;
+    document.getElementById('summary3').innerHTML = opts.stories[3].title;
+
+    document.getElementById('author5').innerHTML = opts.stories[5].author.name;
+    document.getElementById('links5').innerHTML = opts.stories[5].links.permalink;
+    document.getElementById('sentiment5').innerHTML = opts.stories[5].sentiment.body.polarity;
+    document.getElementById('summary5').innerHTML = opts.stories[5].title;
   })
-  // .then(opts => {
-  //   console.log('success', opts);
-  //   parseData = JSON.parse(opts);
-  //   document.getElementById('results').innerHTML = opts
-  // })
   .catch(error => {
     console.log('error', error)
   })
