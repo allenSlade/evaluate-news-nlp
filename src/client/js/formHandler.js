@@ -50,19 +50,3 @@ async function handleSubmit(event) {
 }
 
 export { handleSubmit }
-
-const updateUISuccess = function(data) {
-  const parsedData = JSON.parse(data);
-  console.log(data);
-  let formText = parsedData.stories;
-}
-
-const updateUI = async() => {
-  const req = await fetch('/');
-  try {
-    const allData = await req.json()
-    document.getElementById('results').innerHTML = opts;
-  } catch(error) {
-    console.log('error', error)
-  }
-};
