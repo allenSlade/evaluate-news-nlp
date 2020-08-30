@@ -2,8 +2,31 @@ let AylienNewsApi = require("aylien-news-api");
 let api = new AylienNewsApi.DefaultApi();
 let defaultClient = AylienNewsApi.ApiClient.instance;
 
+
+// let opts = {
+//   // title: "trump",
+//   body: formText,
+//   // sortBy: "social_shares_count.facebook",
+//   language: ["en"],
+//   publishedAtStart: "NOW-7DAYS",
+//   publishedAtEnd: "NOW"
+// };
+//
+// return opts;
+
+function isValidUrl(string) {
+  try {
+    new URL('http://localhost:8081/api-news');
+  } catch (_) {
+    return false;
+  }
+
+  return true;
+}
+
 async function handleSubmit(event) {
   event.preventDefault()
+  // console.log(event);
 
   // check what text was put into the form field
   let formText = document.getElementById('name').value
@@ -50,3 +73,5 @@ async function handleSubmit(event) {
 }
 
 export { handleSubmit }
+export { isValidUrl }
+// module.exports = handleSubmit(event);
